@@ -1,0 +1,15 @@
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\bin\Debug\net6.0\Cadastro Pessoa FS1.exe
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\bin\Debug\net6.0\Cadastro Pessoa FS1.deps.json
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\bin\Debug\net6.0\Cadastro Pessoa FS1.runtimeconfig.json
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\bin\Debug\net6.0\Cadastro Pessoa FS1.dll
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\bin\Debug\net6.0\Cadastro Pessoa FS1.pdb
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\Cadastro Pessoa FS1.csproj.AssemblyReference.cache
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\Cadastro Pessoa FS1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\Cadastro Pessoa FS1.AssemblyInfoInputs.cache
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\Cadastro Pessoa FS1.AssemblyInfo.cs
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\Cadastro Pessoa FS1.csproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\Cadastro Pessoa FS1.dll
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\ref\Cadastro Pessoa FS1.dll
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\Cadastro Pessoa FS1.pdb
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\Cadastro Pessoa FS1.genruntimeconfig.cache
+C:\Users\adria\Desktop\Programação\UC 12 - back\Cadastro Pessoa FS1\obj\Debug\net6.0\refint\Cadastro Pessoa FS1.dll
