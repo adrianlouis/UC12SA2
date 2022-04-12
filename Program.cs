@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 using Cadastro_Pessoa_FS1.Classes;
+using System.Linq;
 
 Console.Clear();
 Console.WriteLine(@$"
@@ -67,6 +68,7 @@ switch (opcaoPf)
 
     PessoaFisica novaPf = new PessoaFisica();
     Endereco novoEnd = new Endereco();
+
     Console.Clear();
     Console.WriteLine($"Digite o nome da pessoa física para cadastro: ");
     novaPf.nome = Console.ReadLine();
@@ -116,7 +118,23 @@ switch (opcaoPf)
 
     novaPf.endereco = novoEnd;
 
-    listaPf.Add(novaPf);
+    // listaPf.Add(novaPf);
+
+    // StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt");
+    // sw.Write(novaPf.nome);
+    // sw.Close();
+   
+//    string nomeArquivo = String.Concat(novaPf.nome.Where(c => !Char.IsWhiteSpace(c)));
+
+    using (StreamWriter sw = new StreamWriter($"{novaPf.nome}.txt"))
+    {
+        // sw.Write(novaPf.nome);
+        // sw.Write(novaPf.cpf);
+        sw.WriteLine(@$"Nome: {novaPf.nome}
+CPF: {novaPf.cpf}
+Endereço: {novoEnd.logradouro}, Nº: {novoEnd.numero}
+Complemento: {novoEnd.complemento}");
+    }
 
     Console.ForegroundColor = ConsoleColor.DarkGreen;
     Console.Beep();
@@ -135,29 +153,41 @@ Cadastro realizado com sucesso!!!");
     Console.Beep();
 
 
-    if (listaPf.Count > 0)
+//     if (listaPf.Count > 0)
+//     {
+        
+//         foreach (PessoaFisica cadaPessoa in listaPf)
+//         {
+//             Console.WriteLine(@$"
+// Nome: {cadaPessoa.nome}
+// Endereço: {cadaPessoa.endereco.logradouro}, {cadaPessoa.endereco.numero}
+// Data de nascimento: {cadaPessoa.dataNascimento}
+// Taxa de imposto: {metodoPf.PagarImposto(cadaPessoa.rendimento).ToString("C")} ");
+
+
+// Console.WriteLine(@$"
+// Aperte ENTER para continuar");
+// Console.ReadLine();
+//         }
+
+//     }else{
+//         Console.WriteLine($"LISTA VAZIA!!!");
+//         Thread.Sleep(3000);
+        
+//     }
+
+    using (StreamReader sr = new StreamReader("AdrianLouis.txt"))
     {
-        
-        foreach (PessoaFisica cadaPessoa in listaPf)
+        string linha;
+        while ((linha = sr.ReadLine()) != null)
         {
-            Console.WriteLine(@$"
-Nome: {cadaPessoa.nome}
-Endereço: {cadaPessoa.endereco.logradouro}, {cadaPessoa.endereco.numero}
-Data de nascimento: {cadaPessoa.dataNascimento}
-Taxa de imposto: {metodoPf.PagarImposto(cadaPessoa.rendimento).ToString("C")} ");
-
-
-Console.WriteLine(@$"
-Aperte ENTER para continuar");
-Console.ReadLine();
+            Console.WriteLine($"{linha}");
         }
-
-    }else{
-        Console.WriteLine($"LISTA VAZIA!!!");
-        Thread.Sleep(3000);
-        
     }
 
+    Console.WriteLine(@$"
+Aperte ENTER para continuar");
+Console.ReadLine();
     
         break;
 
@@ -207,7 +237,10 @@ opcaoPj = Console.ReadLine();
 switch (opcaoPj)
 {
     case "1":
-    //Cadastrar
+    // =====================
+    // ====  Cadastrar  ====
+    // =====================
+
     Console.Beep();    
     PessoaJuridica novaPj = new PessoaJuridica();
     Endereco newAdress = new Endereco();
@@ -262,7 +295,10 @@ switch (opcaoPj)
     
     listaPj.Add(novaPj);
 
-    
+    //salvar pj em arquivo
+
+    metodoPj.Inserir(novaPj);
+
     Console.ForegroundColor = ConsoleColor.DarkGreen;
     Console.Beep();
     Console.Clear();
@@ -275,20 +311,22 @@ Cadastro realizado com sucesso!!!");
         break;
     
     case "2":
+
     Console.Clear();
     Console.Beep();
 
+    // Leitura de PJ do arquivo
+
     if (listaPj.Count > 0)
     {
-
-        foreach (PessoaJuridica people in listaPj)
+        List<PessoaJuridica> listaPja = metodoPj.Ler();
+        foreach (PessoaJuridica cadaItem in listaPja)
         {
-    Console.WriteLine(@$"
-Nome: {people.nome}
-CNPJ: {people.cnpj}
-Razão Social: {people.razaoSocial}
-Taxa de imposto: {metodoPj.PagarImposto(people.rendimento).ToString("C")} ");
-
+            Console.WriteLine(@$"
+ Nome: {cadaItem.nome}
+ CNPJ: {cadaItem.cnpj}
+ Razão Social: {cadaItem.razaoSocial}
+ Taxa de imposto: {metodoPj.PagarImposto(cadaItem.rendimento).ToString("C")} ");
 
 Console.WriteLine(@$"
 Aperte ENTER para continuar");
@@ -300,6 +338,9 @@ Console.ReadLine();
         Console.ResetColor();
         Thread.Sleep(3000);
     }
+    
+    // FIM DA LEITURA DO ARQUIVO 
+
         break;
     
     case "0":
